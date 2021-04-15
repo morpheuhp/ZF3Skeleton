@@ -1,0 +1,23 @@
+<?php
+//var_dump($pessoa);
+?>
+<h1>Lista de Pessoas</h1>
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($pessoas as $pes): ?>
+            <tr>
+                <td><?= $pes->getNome(); ?></td>
+                <td><?= $pes->getSobrenome(); ?></td>
+
+            </tr>
+            <?php
+        endforeach;
+        ?>
+    </tbody>
+</table>

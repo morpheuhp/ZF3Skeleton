@@ -1,0 +1,33 @@
+<?php
+$title = 'Titulo da pagina';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title); ?></h1>
+<?php
+$form->setAttribute('action', $this->url('pessoa', ['action' => 'adicionar']));
+$form->prepare();
+echo $this->form()->openTag($form);
+
+$id = $this->form->get('id');
+$nome = $this->form->get('nome');
+$sobrenome = $this->form->get('sobrenome');
+$email = $this->form->get('email');
+$situacao = $this->form->get('situacao');
+
+$nome->setAttribute('class','form-control');
+$nome->setAttribute('autofocus','autofocus');
+
+$sobrenome->setAttribute('class','form-control');
+$email->setAttribute('class','form-control');
+$situacao->setAttribute('class','form-control');
+
+$submit->$this->form->get('submit');
+$submit->setAttribute('class','btn btn-primary btn-lg');
+?>
+<div class="form-group">
+    <div class="col-md-6">
+        <?=$this->formLabel($nome);?>
+        <?=$this->formElement($nome);?>
+        <?=$this->formElementErrors()->render($nome,['class'=>'help-block']);?>
+    </div>
+</div>
