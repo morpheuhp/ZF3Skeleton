@@ -6,11 +6,9 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Aula;
+namespace Core;
 
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
-
-class Module implements ConfigProviderInterface {
+class Module {
 
     const VERSION = '3.1.4dev';
 

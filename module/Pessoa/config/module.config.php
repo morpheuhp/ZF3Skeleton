@@ -20,7 +20,7 @@ return [
                 'options' => [
                     'route' => '/pessoa[/:action[/:id]]', // site.com.br/pessoa/incluir/121212112
                     'constraints' => [
-                        'action' => '[a-zA-Z][a-zA-Z0-0_-]*',
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id' => '[0-9]+'
                     ],
                     'defaults' => [
@@ -44,8 +44,8 @@ return [
     'db' => [
         'driver' => 'Pdo_Mysql',
         'database' => 'youtube',
-        'username' => 'root',
-        'password' => '',
+        'username' => 'zend',
+        'password' => 'dev123',
         'hostname' => '127.0.0.1'
     ]
 ];

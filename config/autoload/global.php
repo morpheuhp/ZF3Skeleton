@@ -12,5 +12,11 @@
  */
 
 return [
-    // ...
+   'db' => [
+        'driver' => 'Pdo_Mysql',
+        'database' => 'youtube',
+        'username' => 'zend',
+        'password' => 'dev123',
+        'hostname' => '127.0.0.1'
+    ]
 ];

@@ -2,6 +2,7 @@
 //var_dump($pessoa);
 ?>
 <h1>Lista de Pessoas</h1>
+<a href="<?=$this->url('pessoa',['action'=>'adicionar']);?>" class="btn btn-success">Adicionar</a>
 <table class="table table-striped">
 
     <thead>
@@ -14,6 +15,11 @@
             <tr>
                 <td><?= $pes->getNome(); ?></td>
                 <td><?= $pes->getSobrenome(); ?></td>
+                <td>
+                    <a href="<?=$this->url('pessoa',['action'=>'editar','id'=>$pes->getId()]);?>" class="btn btn-info">+</a>
+                    <a href="<?=$this->url('pessoa',['action'=>'remover','id'=>$pes->getId()]);?>" class="btn btn-danger">X</a>
+                </td>
+                
 
             </tr>
             <?php

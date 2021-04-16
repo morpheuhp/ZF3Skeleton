@@ -38,8 +38,8 @@ class PessoaTable {
         return $row;
     }
 
-    public function salvarPessoa(\Pessoa $pessoa) {
-        /*
+    public function salvarPessoa(Pessoa $pessoa) {
+        /* 
          * private $id;
           private $nome;
           private $sobrenome;
@@ -49,9 +49,9 @@ class PessoaTable {
 
         $data = [
             'nome' => $pessoa->getNome(),
-            'sobrenome' => $pessoa->setSobrenome(),
-            'email' => $pessoa->setEmail(),
-            'situacao' => $pessoa->setSituacao(),
+            'sobrenome' => $pessoa->getSobrenome(), 
+            'email' => $pessoa->getEmail(),
+            'situacao' => $pessoa->getSituacao()
         ];
 
         $id = (int) $pessoa->getId();

@@ -8,11 +8,10 @@
 
 namespace Pessoa;
 
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
-use Pessoa\Controller\PessoaController;
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
 
 class Module implements ConfigProviderInterface {
 
@@ -33,7 +32,7 @@ class Module implements ConfigProviderInterface {
                     $dbAdapter = $container->get(AdapterInterface::class);
                     $resultSetPrototype = new ResultSet();
                     $resultSetPrototype->setArrayObjectPrototype(new Model\Pessoa());
-                    return new \Zend\Db\TableGateway\TableGateway('pessoa', $dbAdapter, null, $resultSetPrototype);
+                    return new TableGateway('pessoa', $dbAdapter, null, $resultSetPrototype);
                 }
             ]
         ];
