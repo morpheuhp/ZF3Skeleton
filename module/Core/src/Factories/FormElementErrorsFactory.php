@@ -2,22 +2,20 @@
 
 namespace Core\Factories;
 
-use Zend\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 use Zend\Form\View\Helper\FormElementErrors;
+use Zend\ServiceManager\Factory\FactoryInterface;
 
-/**
- * Description of FormElementErrorsFactory
- *
- * @author fernando
- */
-class FormElementErrorsFactory implements FactoryInterface {
-
-    //put your code here
-    public function __invoke(ContainerInterface $container, $requestedName, $options = null): object {
+class FormElementErrorsFactory implements FactoryInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    {
         $helper = new FormElementErrors();
-        $config = $container->get('config');
 
+        $config = $container->get('config');
         if (isset($config['view_helper_config']['form_element_errors'])) {
             $configHelper = $config['view_helper_config']['form_element_errors'];
             if (isset($configHelper['message_open_format'])) {
@@ -30,7 +28,7 @@ class FormElementErrorsFactory implements FactoryInterface {
                 $helper->setMessageCloseString($configHelper['message_close_string']);
             }
         }
+
         return $helper;
     }
-
 }

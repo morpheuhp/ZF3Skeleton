@@ -1,9 +1,5 @@
 # ZendSkeletonApplication
 
-> ## Repository abandoned 2019-12-31
->
-> This repository has moved to laminas/laminas-skeleton-installer.
-
 ## Introduction
 
 This is a skeleton application using the Zend Framework MVC layer and module
@@ -26,7 +22,7 @@ Once installed, you can test it out immediately using PHP's built-in web server:
 
 ```bash
 $ cd path/to/install
-$ php -S 0.0.0.0:8080 -t public
+$ php -S 0.0.0.0:8080 -t public/ public/index.php
 # OR use the composer alias:
 $ composer run --timeout 0 serve
 ```
